@@ -1,16 +1,50 @@
 <template>
-	<event-poster
+	<event-cover
 		:events="events"
 		:current-event="currentEvent"
-	>
-	</event-poster>
+    :event="event"
+	>	</event-cover>
+
+  <event-title
+  		:events="events"
+		  :current-event="currentEvent"
+      :event="event"
+  ></event-title>
+
+  <event-details
+      :events="events"
+		  :current-event="currentEvent"
+      :event="event"
+  ></event-details>
+
+  <event-constraints
+    :event="event"
+  ></event-constraints>
+
+  <event-form
+    :event="event"
+  ></event-form>
 </template>
 <script>
-	import EventPoster from './components/EventPoster.vue';
+	import EventCover from './components/EventCover.vue';
+  import EventTitle from './components/EventTitle.vue';
+  import EventDetails from './components/EventDetails.vue';
+  import EventConstraints from './components/EventConstraints.vue';
+  import EventForm from './components/EventForm.vue'
+  
 	export default {
 		components: {
-			EventPoster,
+			EventCover,
+      EventTitle,
+      EventDetails,
+      EventConstraints,
+      EventForm
 		},
+    computed: {
+      event() {
+        return this.events[this.currentEvent];
+      }
+    },
 		data() {
 			return {
 				events: [],
@@ -26,7 +60,6 @@
 				let data = await res.json();
 
 				this.events = data;
-				console.log('the events are ', this.events[0]);
 			},
 		},
 	};
