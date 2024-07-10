@@ -1,5 +1,8 @@
 <template>
-	<div class="event-form">
+	<div
+		class="event-form"
+		v-if="event"
+	>
 		<div class="name">
 			<label
 				for=""
@@ -12,6 +15,7 @@
 				type="text"
 				class="name-input input"
 				v-model="name"
+				placeholder="Abebe Bikila"
 			/>
 		</div>
 
@@ -21,35 +25,46 @@
 				class="phone-number-label label"
 				>Phone Number</label
 			>
-			<input
-				type="text"
-				class="phone-number-input input"
-				v-model="phoneNo"
-			/>
-		</div>
-
-		<div class="tickets">
-      <div class="label ticket-label">Tickets to Buy</div>
-			<div class="tickets-container input">
-				<div class="minus ticket-control"></div>
-				<div class="tickets-count">{{ count }}</div>
-				<div class="plus ticket-control"></div>
-			</div>
-			<div class="total-price">
-				You'll be paying
-				<span class="amount">{{ `${totalPrice}.00` }}</span> ETB
+			<div class="input-container">
+				<input
+					type="number"
+					class="phone-number-input input fullwidth"
+					v-model="phoneNo"
+					placeholder="00 00 00 00"
+				/>
 			</div>
 		</div>
 
-		<div class="submit">
-			I'm ready to pay <span class="amount">{{ totalPrice }}</span> Birr
-		</div>
+		<tickets-count
+      :count="count"
+      :event="event"
+      :decrease="decrease"
+      :increase="increase"
+      :ticket-data="ticketData"
+      v-if="event"
+      :classes="{label:'', buttons: ''}"
+    ></tickets-count>
+
+		<button
+			class="submit"
+			:class="{ disable: filled }"
+			@click.prevent="submitForm"
+		>
+			I'm ready to pay<span class="submit-amount"
+				>&nbsp;{{ totalPrice }}.00&nbsp;</span
+			>
+			Birr
+		</button>
 	</div>
 </template>
 
 <script>
+  import TicketsCount from "./TicketsCount.vue"
+
 	export default {
-		props: ['event'],
+    components: {TicketsCount},
+    emits: ['page-created'],
+		props: ['event', 'pageCreated', 'ticketData'],
 		data() {
 			return {
 				name: '',
@@ -59,8 +74,35 @@
 		},
 		computed: {
 			totalPrice() {
-				return this.count * this.event.price;
+				return this.ticketData.count * this.event.price;
 			},
+			filled() {
+				return !this.name || !this.phoneNo;
+			},
+		},
+		methods: {
+			submitForm() {
+				if (!this.name || !this.phoneNo) {
+					alert('Please fill the form.');
+					return;
+				}
+        
+				this.pageCreated({
+					name: this.name,
+          phoneNo: this.phoneNo,
+          count: this.ticketData.count,
+          event: this.event
+				});
+
+			},
+      decrease() {
+					if (this.count > 1) {
+						this.count -= 1;
+					}
+				},
+				increase() {
+					this.count += 1;
+				},
 		},
 	};
 </script>

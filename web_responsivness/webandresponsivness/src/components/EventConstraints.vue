@@ -1,5 +1,5 @@
 <template>
-	<div class="event-constraints">
+	<div class="event-constraints" v-if="event">
 		<div class="date">
 			<img
 				src="../../public/assets/calendarO.svg"

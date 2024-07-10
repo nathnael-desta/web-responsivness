@@ -1,54 +1,62 @@
 <template>
-	<event-cover
-		:events="events"
-		:current-event="currentEvent"
+  <booking-page
+    :events="events"
+    :current-event="currentEvent"
     :event="event"
-	>	</event-cover>
+    :page-created="pageCreated"
+    v-if="pageNo === 0"
+    :ticket-data="ticketData"
+  ></booking-page>
 
-  <event-title
-  		:events="events"
-		  :current-event="currentEvent"
-      :event="event"
-  ></event-title>
-
-  <event-details
-      :events="events"
-		  :current-event="currentEvent"
-      :event="event"
-  ></event-details>
-
-  <event-constraints
+  <payment-page
     :event="event"
-  ></event-constraints>
+    v-if="pageNo === 1"
+    :ticket-data="ticketData"
+    :change-page-no="changePageNo"
+  ></payment-page>
 
-  <event-form
-    :event="event"
-  ></event-form>
+  <booking-success
+    v-if="pageNo === 2"
+  ></booking-success>
 </template>
 <script>
-	import EventCover from './components/EventCover.vue';
-  import EventTitle from './components/EventTitle.vue';
-  import EventDetails from './components/EventDetails.vue';
-  import EventConstraints from './components/EventConstraints.vue';
-  import EventForm from './components/EventForm.vue'
-  
+  import BookingPage from './components/BookingPage.vue';
+  import PaymentPage from './components/PaymentPage.vue';
+  import BookingSuccess from './components/BookingSuccess.vue';
+
 	export default {
 		components: {
-			EventCover,
-      EventTitle,
-      EventDetails,
-      EventConstraints,
-      EventForm
+      BookingPage,
+      PaymentPage,
+      BookingSuccess
 		},
-    computed: {
-      event() {
-        return this.events[this.currentEvent];
-      }
-    },
+		computed: {
+			event() {
+				return this.events[this.currentEvent];
+			},
+		},
 		data() {
 			return {
 				events: [],
 				currentEvent: 0,
+        pageNo: 2,
+        buyers: [],
+        ticketData: {
+          name: '',
+          phoneNo: '',
+          count: 1,
+          event: '',
+          decrease() {
+            if (this.count > 1) {
+              this.count -= 1 
+            }
+            console.log("asdafasd",this.count)
+          },
+          increase() {
+            this.count += 1
+            console.log("asfdasdf",this.count)
+          }
+        }
 			};
 		},
 		created() {
@@ -61,6 +69,21 @@
 
 				this.events = data;
 			},
+      pageCreated(dataObj) {
+        this.buyers.push(dataObj)
+        this.pageNo = 1;
+        this.ticketData = {
+          name: dataObj.name,
+          phoneNo: dataObj.phoneNo,
+          count: dataObj.count,
+          event: dataObj.event
+        }
+
+        console.log(dataObj, this.ticketData)
+      },
+      changePageNo(no) {
+        this.pageNo = no;
+      }
 		},
 	};
 </script>
