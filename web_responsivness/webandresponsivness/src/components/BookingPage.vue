@@ -28,6 +28,8 @@
 				:event="event"
 				:page-created="pageCreated"
 				:ticket-data="ticketData"
+				:increase="increase"
+				:decrease="decrease"
 				></event-form>
 		</div>
 	</div>
@@ -48,6 +50,6 @@ export default {
 			EventConstraints,
 			EventForm,
 		},
-  props: ['events', 'currentEvent', 'event', 'pageCreated', 'ticketData'],
+  props: ['events', 'currentEvent', 'event', 'pageCreated', 'ticketData', 'increase', 'decrease'],
 }
 </script>

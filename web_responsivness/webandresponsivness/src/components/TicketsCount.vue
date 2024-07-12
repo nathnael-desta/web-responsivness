@@ -7,12 +7,12 @@
 		<div class="tickets-container input" :class="[classes.buttons]">
 			<div
 				class="minus ticket-control"
-				@click="ticketData.decrease"
+				@click="decrease"
 			></div>
 			<div class="tickets-count">{{ ticketData.count }}</div>
 			<div
 				class="plus ticket-control"
-				@click="ticketData.increase"
+				@click="increase"
 			></div>
 		</div>
 		<div class="total-price">
@@ -25,7 +25,7 @@
 <script>
 
 	export default {
-	  props: ['event', 'ticketData', 'classes', 'count'],
+	  props: ['event', 'ticketData', 'classes', 'count','increase','decrease'],
 	  computed: {
 				totalPrice() {
 					return this.ticketData.count * this.event.price;

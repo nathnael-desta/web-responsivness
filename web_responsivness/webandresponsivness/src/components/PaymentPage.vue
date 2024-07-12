@@ -38,6 +38,8 @@
 				:ticket-data="ticketData"
 				:event="event"
 				:classes="{ label: 'ticket-label', buttons: 'buttons' }"
+				:increase="increase"
+    :decrease="decrease"
 			></tickets-count>
 		</div>
 
@@ -80,6 +82,7 @@
 		<div 
       class="payNow"
       :class="{disable: cantPay}"
+			@click="submit"
     >Pay Now</div>
 	</div>
 </template>
@@ -87,7 +90,7 @@
 <script>
 	import TicketsCount from './TicketsCount.vue';
 	export default {
-		props: ['event', 'ticketData', 'changePageNo'],
+		props: ['event', 'ticketData', 'changePageNo','increase',"decrease", "changePageNo"],
     data() {
       return {
         paymentNo: NaN,
@@ -99,7 +102,12 @@
       chooseDiv(no) {
         this.paymentNo = no;
         this.cantPay = false;
-      }
+      },
+			submit() {
+				if (!this.cantPay) {
+					this.changePageNo(2)
+				}
+			}
     }
 	};
 </script>

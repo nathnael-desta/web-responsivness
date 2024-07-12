@@ -36,14 +36,14 @@
 		</div>
 
 		<tickets-count
-      :count="count"
-      :event="event"
-      :decrease="decrease"
-      :increase="increase"
-      :ticket-data="ticketData"
-      v-if="event"
-      :classes="{label:'', buttons: ''}"
-    ></tickets-count>
+			:count="count"
+			:event="event"
+			:ticket-data="ticketData"
+			v-if="event"
+			:classes="{ label: '', buttons: '' }"
+			:increase="increase"
+			:decrease="decrease"
+		></tickets-count>
 
 		<button
 			class="submit"
@@ -59,12 +59,12 @@
 </template>
 
 <script>
-  import TicketsCount from "./TicketsCount.vue"
+	import TicketsCount from './TicketsCount.vue';
 
 	export default {
-    components: {TicketsCount},
-    emits: ['page-created'],
-		props: ['event', 'pageCreated', 'ticketData'],
+		components: { TicketsCount },
+		emits: ['page-created'],
+		props: ['event', 'pageCreated', 'ticketData', 'increase', 'decrease'],
 		data() {
 			return {
 				name: '',
@@ -86,23 +86,14 @@
 					alert('Please fill the form.');
 					return;
 				}
-        
+
 				this.pageCreated({
 					name: this.name,
-          phoneNo: this.phoneNo,
-          count: this.ticketData.count,
-          event: this.event
+					phoneNo: this.phoneNo,
+					count: this.ticketData.count,
+					event: this.event,
 				});
-
 			},
-      decrease() {
-					if (this.count > 1) {
-						this.count -= 1;
-					}
-				},
-				increase() {
-					this.count += 1;
-				},
 		},
 	};
 </script>

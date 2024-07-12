@@ -494,6 +494,7 @@ body {
 
 				@media (prefers-color-scheme: dark) {
 					background-color: rgba(20, 19, 29, 1);
+					color: rgba(238, 238, 238, 1);
 				}
 
 				@media (min-width: 900px) {
@@ -595,385 +596,382 @@ body {
 }
 
 .label {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 21px;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 21px;
 
-  @media (prefers-color-scheme: dark) {
-    color: white;
-  }
+	@media (prefers-color-scheme: dark) {
+		color: white;
+	}
 
-  @media (max-width: 900px) {
-    font-size: 20px;
-  }
+	@media (max-width: 900px) {
+		font-size: 20px;
+	}
 
-  @media (max-width: 650px) {
-    font-size: 18px;
-  }
+	@media (max-width: 650px) {
+		font-size: 18px;
+	}
 
-  @media (max-width: 550px) {
-    font-size: 16px;
-  }
+	@media (max-width: 550px) {
+		font-size: 16px;
+	}
 }
 
 .input {
-  border: none;
-  outline: none;
-  height: 48px;
-  border-radius: 10px;
-  background-color: rgba(238, 238, 238, 1);
-  border: solid 2px rgba(220, 220, 220, 1);
-  padding: 11px 24px;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 26px;
-  color: rgba(100, 100, 123, 1);
+	border: none;
+	outline: none;
+	height: 48px;
+	border-radius: 10px;
+	background-color: rgba(238, 238, 238, 1);
+	border: solid 2px rgba(220, 220, 220, 1);
+	padding: 11px 24px;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 26px;
+	color: rgba(100, 100, 123, 1);
 
-  @media (prefers-color-scheme: dark) {
-    background-color: rgba(20, 19, 29, 1);
-    border: solid 2px rgb(121, 124, 138) !important;
-  }
+	@media (prefers-color-scheme: dark) {
+		background-color: rgba(20, 19, 29, 1);
+		border: solid 2px rgb(121, 124, 138) !important;
+	}
 
-  @media (min-width: 900px) {
-    width: 374px;
-  }
+	@media (min-width: 900px) {
+		width: 374px;
+	}
 }
 
 .input-container {
-  position: relative;
-  color: black;
+	position: relative;
+	color: black;
 
-  @media (prefers-color-scheme: dark) {
-    color: white;
-  }
+	@media (prefers-color-scheme: dark) {
+		color: white;
+	}
 
-  &::before {
-    position: absolute;
-    content: '+251';
-    left: 24px;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 26px;
-    top: 20%;
+	&::before {
+		position: absolute;
+		content: '+251';
+		left: 24px;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 26px;
+		top: 20%;
 
-    width: 20px;
-    height: 15px;
-  }
+		width: 20px;
+		height: 15px;
+	}
 
-  .phone-number-input {
-    padding-left: 60px;
-  }
+	.phone-number-input {
+		padding-left: 60px;
+	}
 }
-
 
 .tickets {
-  .tickets-container {
-    padding: 11px 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 5px;
+	.tickets-container {
+		padding: 11px 10px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-radius: 5px;
 
-    .ticket-control {
-      width: 36px;
-      height: 36px;
-      background-color: rgba(211, 175, 53, 1);
-    }
+		.ticket-control {
+			width: 36px;
+			height: 36px;
+			background-color: rgba(211, 175, 53, 1);
+		}
 
-    .minus {
-      position: relative;
-      cursor: pointer;
-      border-radius: 5px;
+		.minus {
+			position: relative;
+			cursor: pointer;
+			border-radius: 5px;
 
-      &::before {
-        position: absolute;
-        content: '';
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 12px;
-        border: 1px solid rgba(238, 238, 238, 1);
-      }
-    }
+			&::before {
+				position: absolute;
+				content: '';
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 12px;
+				border: 1px solid rgba(238, 238, 238, 1);
+			}
+		}
 
-    .tickets-count {
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 32px;
-    }
+		.tickets-count {
+			font-weight: 500;
+			font-size: 20px;
+			line-height: 32px;
+		}
 
-    .plus {
-      position: relative;
-      cursor: pointer;
-      border-radius: 5px;
+		.plus {
+			position: relative;
+			cursor: pointer;
+			border-radius: 5px;
 
-      &::before {
-        position: absolute;
-        content: '';
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 12px;
-        border: 1px solid rgba(238, 238, 238, 1);
-      }
+			&::before {
+				position: absolute;
+				content: '';
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 12px;
+				border: 1px solid rgba(238, 238, 238, 1);
+			}
 
-      &::after {
-        position: absolute;
-        content: '';
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 12px;
-        border: 1px solid rgba(238, 238, 238, 1);
-      }
-    }
-  }
+			&::after {
+				position: absolute;
+				content: '';
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				height: 12px;
+				border: 1px solid rgba(238, 238, 238, 1);
+			}
+		}
+	}
 
-  .total-price {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
-    color: rgba(129, 129, 129, 1);
+	.total-price {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 26px;
+		color: rgba(129, 129, 129, 1);
 
-    @media (prefers-color-scheme: dark) {
-      color: rgba(161, 167, 181, 1);
-    }
+		@media (prefers-color-scheme: dark) {
+			color: rgba(161, 167, 181, 1);
+		}
 
-    .amount {
-      font-weight: 700;
-      font-size: 20px;
-      line-height: 32px;
-      color: black;
+		.amount {
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 32px;
+			color: black;
 
-      @media (prefers-color-scheme: dark) {
-        color: rgba(161, 167, 181, 1);
-      }
-    }
-  }
+			@media (prefers-color-scheme: dark) {
+				color: rgba(161, 167, 181, 1);
+			}
+		}
+	}
 }
 
-
-
 .payment-page {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
 
-  @media (min-width: 900px) {
+	@media (prefers-color-scheme: dark) {
+		background-color: rgba(20, 19, 29, 1) !important;
+	}
+
+	@media (min-width: 900px) {
 		display: flex;
 		background-color: white;
-    width: min-content;
+		width: min-content;
 		height: 590px;
 		border-radius: 30px;
 	}
 
-  path {
-    @media (prefers-color-scheme: dark) {
-      stroke:white;
-    }
-  }
+	path {
+		@media (prefers-color-scheme: dark) {
+			stroke: white;
+		}
+	}
 }
 
 .nav {
-  margin: 30px calc(100dvw * 0.075) 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+	margin: 30px calc(100dvw * 0.075) 0;
+	display: flex;
+	align-items: center;
+	gap: 10px;
 
-  @media (min-width: 900px) {
-    margin: 40px 40px 20px; 
-  }
+	@media (min-width: 900px) {
+		margin: 40px 40px 20px;
+	}
 
-  .svg-container {
-    cursor: pointer;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease;
+	.svg-container {
+		cursor: pointer;
+		border-radius: 50%;
+		width: 30px;
+		height: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: background-color 0.3s ease;
 
-    svg {
-      margin-left: -3px;
-    }
+		svg {
+			margin-left: -3px;
+		}
 
-    &:hover {
-      background-color: rgba(128, 128, 128, 0.6);
-    }
-  }
+		&:hover {
+			background-color: rgba(128, 128, 128, 0.6);
+		}
+	}
 }
 
 .ticket_container {
-  margin: 30px calc(100dvw * 0.075) 0;
+	margin: 30px calc(100dvw * 0.075) 0;
 
-  @media (min-width: 900px) {
-    margin: 20px 40px; 
-  }
+	@media (min-width: 900px) {
+		margin: 20px 40px;
+	}
 }
 
 .choosePayment {
-  margin: 30px calc(100dvw * 0.075) 0;
-  margin-top: 150px;
+	margin: 30px calc(100dvw * 0.075) 0;
+	margin-top: 150px;
 
-  @media (min-width: 900px) {
-    margin: 20px 40px; 
-  }
+	@media (min-width: 900px) {
+		margin: 20px 40px;
+	}
 
-  @media (prefers-color-scheme: dark) {
-    color: white;
-  }
+	@media (prefers-color-scheme: dark) {
+		color: white;
+	}
 }
 
 #nav-title {
-  font-family: 700;
-  font-size: 20px;
-  line-height: 24px;
+	font-family: 700;
+	font-size: 20px;
+	line-height: 24px;
 
-  @media (prefers-color-scheme: dark) {
-    color: white;
-  }
+	@media (prefers-color-scheme: dark) {
+		color: white;
+	}
 }
 
 .wideGap {
-  display: flex;
-  flex-direction: column;
-  gap: 20px !important;
+	display: flex;
+	flex-direction: column;
+	gap: 20px !important;
 }
 
 .ticket-label {
-  margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 .buttons {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
-
-
 .choose {
-  font-size: 20px;
-  line-height: 26px;
-  font-weight: 700;
-  margin-bottom: 40px;
+	font-size: 20px;
+	line-height: 26px;
+	font-weight: 700;
+	margin-bottom: 40px;
 }
 
 .payment {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
 
-  img {
-    width: 58px;
-    height: 58px;
-    cursor: pointer;
-  }
+	img {
+		width: 58px;
+		height: 58px;
+		cursor: pointer;
+	}
 }
 
 .chosenPayment {
-  outline: 3px solid rgba(211, 175, 53, 1);
-  outline-offset: 5px;
-  border-radius: 5px;
+	outline: 3px solid rgba(211, 175, 53, 1);
+	outline-offset: 5px;
+	border-radius: 5px;
 }
 
 .payNow {
-  margin: 30px calc(100dvw * 0.075) 0;
-  margin-top: auto;
-  margin-bottom: 80px;
-  height: 58px;
-  background-color: rgba(211, 175, 53, 1);
-  font-size: 22px;
-  line-height: 26px;
-  font-weight: 600;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
-
+	margin: 30px calc(100dvw * 0.075) 0;
+	margin-top: auto;
+	margin-bottom: 80px;
+	height: 58px;
+	background-color: rgba(211, 175, 53, 1);
+	font-size: 22px;
+	line-height: 26px;
+	font-weight: 600;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	border-radius: 10px;
+	cursor: pointer;
 }
 
 .fullwidth {
-  width: 100% !important;
+	width: 100% !important;
 }
 
 .booking-success {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  padding: 40px 40px;
-  justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	padding: 40px 40px;
+	justify-content: space-between;
 
-  @media (min-width: 900px) {
-    flex-direction: row;
-    width: 862px;
-    height: 580px;
-    border-radius: 30px;
-    background-color: white;
-  }
+	@media (min-width: 900px) {
+		flex-direction: row;
+		width: 862px;
+		height: 580px;
+		border-radius: 30px;
+		background-color: white;
+	}
 
-  @media (prefers-color-scheme: dark) {
-      background-color: rgba(20, 19, 29, 1);
-  }
+	@media (prefers-color-scheme: dark) {
+		background-color: rgba(20, 19, 29, 1);
+	}
 
-  .left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
+	.left {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 40px;
 
-    .texts{ 
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+		.texts {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
 
-      @media (prefers-color-scheme: dark) {
-        color: white;
-      }
-  
-      .event-success {
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 37px;
-        text-align: center;
-      }
-  
-      .please-download {
-        font-weight: 500;
-        font-size:18px;
-        line-height: 24px;
-        text-align: center; 
-      }
-    }
-  }
+			@media (prefers-color-scheme: dark) {
+				color: white;
+			}
 
-  .right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
+			.event-success {
+				font-weight: 700;
+				font-size: 32px;
+				line-height: 37px;
+				text-align: center;
+			}
 
-    .download {
-      height: 58px;
-      border:solid 2px rgba(211, 175, 53, 1);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      width: min(100%, 500px);
-      border-radius: 10px;
-      color: rgba(211, 175, 53, 1);
-      transition: color 0.3s ease;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
+			.please-download {
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 24px;
+				text-align: center;
+			}
+		}
+	}
 
-      &:hover {
-        color: white;
-        background-color: rgba(211, 175, 53, 1);
+	.right {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 40px;
 
-      }
-    }
-  }
+		.download {
+			height: 58px;
+			border: solid 2px rgba(211, 175, 53, 1);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			width: min(100%, 500px);
+			border-radius: 10px;
+			color: rgba(211, 175, 53, 1);
+			transition: color 0.3s ease;
+			transition: background-color 0.3s ease;
+			cursor: pointer;
+
+			&:hover {
+				color: white;
+				background-color: rgba(211, 175, 53, 1);
+			}
+		}
+	}
 }
