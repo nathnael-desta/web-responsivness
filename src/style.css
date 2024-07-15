@@ -19,7 +19,11 @@ body {
 		width: 100vw;
 	}
 
-	@media (prefers-color-scheme: dark) {
+	
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
 		background-color: rgba(38, 37, 54, 1);
 	}
 }
