@@ -1,0 +1,22 @@
+[
+  {
+    "imageSrc": "./assets/poster.png",
+    "imageAlt": "comedy night poster",
+    "name": "Saq Jam Comedy Vol 10",
+    "date": "12 Jul 2024",
+    "time": "6:00 PM",
+    "price": 200,
+    "organizer": "by Saq Central",
+    "about": "Lorem ipsum dolor sit amet consectetur. Sit egestas varius venenatis varius nisl lacus. Amet volutpat urna vitae id gravida amet est sed. A duis scelerisque aliquam posuere amet in tellus. Est senectus est nulla molestie.",
+    "location": "./assets/Map.svg",
+    "contact": {
+      "call": [
+        "0911098787",
+        "0955662233"
+      ],
+      "sms": [
+        "0955662244"
+      ]
+    }
+  }
+]
